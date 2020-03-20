@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<title>Clock</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+	</head>
+
+	<body>
+		<div class="clock">
+			<h1 id="time">time</h1>
+		</div>
+	</body>
+
+	<style>
+		body {
+			background-color: black;
+		}
+
+		.clock {
+			position: absolute;
+			color: white;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			font-size: 48px;
+		}
+	</style>
+
+	<script>
+		function updateTime() {
+			let currentTime = new Date().toLocaleTimeString();
+
+			document.getElementById("time").innerHTML = currentTime;
+
+			setTimeout(updateTime, 500);
+		}
+		updateTime();
+	</script>
+</html>
